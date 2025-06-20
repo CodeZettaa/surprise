@@ -1,0 +1,185 @@
+/* Fun celebration styles */
+:root {
+  --primary: #ff6b6b;
+  --secondary: #4ecdc4;
+  --accent: #ffe66d;
+  --dark: #121212;
+  --light: #ffffff;
+  --gray: #333333;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: var(--dark);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  animation: float 3s ease-in-out infinite;
+  border: 1px solid var(--gray);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+h1 {
+  color: var(--light);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  animation: rainbow 5s linear infinite;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes rainbow {
+  0% {
+    color: var(--primary);
+  }
+  33% {
+    color: var(--secondary);
+  }
+  66% {
+    color: var(--accent);
+  }
+  100% {
+    color: var(--primary);
+  }
+}
+
+.avatar {
+  position: relative;
+  margin: 2rem auto;
+}
+
+.avatar img {
+  border-radius: 50%;
+  border: 5px solid var(--primary);
+  padding: 5px;
+  background: var(--gray);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+}
+
+.avatar:hover img {
+  transform: rotate(360deg) scale(1.1);
+}
+
+.avatar::before {
+  content: "🎊";
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  font-size: 2rem;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.avatar::after {
+  content: "🎊";
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  font-size: 2rem;
+  animation: bounce 1s ease-in-out infinite 0.5s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.message {
+  font-size: 1.5rem;
+  color: var(--dark);
+  margin: 2rem 0;
+  padding: 1rem;
+  background: var(--accent);
+  border-radius: 10px;
+  transform: rotate(-1deg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.actions a {
+  text-decoration: none;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: var(--light);
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.actions a:hover {
+  transform: scale(1.05);
+  background: var(--secondary);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px dashed var(--gray);
+}
+
+.logo {
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+
+footer p {
+  color: var(--light);
+  font-size: 0.9rem;
+}
+
+/* Confetti animation */
+@keyframes confetti {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  animation: confetti 5s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(255, 230, 109, 0.5);
+}

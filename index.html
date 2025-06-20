@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Course Graduates - Celebration Pages</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .landing-container {
+        background: var(--dark);
+        border-radius: 20px;
+        padding: 3rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        max-width: 600px;
+        width: 90%;
+        border: 1px solid var(--gray);
+      }
+      .landing-container h1 {
+        color: var(--light);
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      }
+      #student-select {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+        border-radius: 50px;
+        border: 2px solid var(--primary);
+        background: var(--gray);
+        color: var(--light);
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+        width: 100%;
+        max-width: 400px;
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FF6B6B%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.4-5.4-13z%22/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1.5rem center;
+        background-size: 0.8em;
+        padding-right: 4rem;
+      }
+      #student-select:focus {
+        outline: none;
+        border-color: var(--secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="landing-container">
+      <h1>🎉 Congratulations Graduates! 🎉</h1>
+      <p class="message" style="transform: none; margin-bottom: 2.5rem">
+        Select a student to view their celebration page.
+      </p>
+      <select id="student-select" onchange="navigateToPage()">
+        <option value="">Select a Student...</option>
+        <option value="ali.html">Ali</option>
+        <option value="aml.html">Aml</option>
+        <option value="anas.html">Anas</option>
+        <option value="dina.html">Dina</option>
+        <option value="esraa.html">Esraa</option>
+        <option value="fatma.html">Fatma</option>
+        <option value="ghada.html">Ghada</option>
+        <option value="hagar.html">Hagar</option>
+        <option value="ibrahim.html">Ibrahim</option>
+        <option value="mahmoud.html">Mahmoud</option>
+        <option value="mariam.html">Mariam</option>
+        <option value="merna.html">Merna</option>
+        <option value="mohamed.html">Mohamed</option>
+        <option value="mohammed.html">Mohammed</option>
+        <option value="monica.html">Monica</option>
+        <option value="nadaMohamed.html">Nada Mohamed</option>
+        <option value="nadaMohamedAhmed.html">Nada Mohamed Ahmed</option>
+        <option value="nihal.html">Nihal</option>
+        <option value="nour.html">Nour</option>
+        <option value="nouran.html">Nouran</option>
+        <option value="omar.html">Omar</option>
+        <option value="rafat.html">Rafat</option>
+        <option value="rawan.html">Rawan</option>
+        <option value="youssef.html">Youssef</option>
+        <option value="ahmedAli.html">Ahmed Ali</option>
+        <option value="ahmedMahmoud.html">Ahmed Mahmoud</option>
+        <option value="ahmedMohamed.html">Ahmed Mohamed</option>
+      </select>
+    </div>
+
+    <script>
+      function navigateToPage() {
+        const select = document.getElementById("student-select");
+        const page = select.value;
+        if (page) {
+          window.location.href = page;
+        }
+      }
+    </script>
+  </body>
+</html>
